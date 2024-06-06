@@ -87,6 +87,8 @@ class Pessoa{
         //Instruções em SQL
                           //tabela/entidade(atributos, atributos, atributos, atributo) valores_ que_serão_substituidos (?,?,?,?)
         $sql = "INSERT INTO cliente (`nome`, `endereco`, `bairro`, `cep`, `cidade`, `estado`, `telefone`, `celular`) VALUES (?,?,?,?,?,?,?,?)";
+        //  "INSERT INTO cliente -> Esta parte do código SQL indica que estamos inserindo dados em uma tabela chamada cliente
+        //especifica as colunas da tabela cliente nas quais os dados serão inseridos. 
         $stmt = $this->conexao->getConexao()->prepare($sql);
         $stmt->bind_param('ssssssss', $this->nome, $this->endereco, $this->bairro, $this->cep, $this->cidade, $this->estado, $this->telefone, $this->celular);
         return $stmt->execute();
