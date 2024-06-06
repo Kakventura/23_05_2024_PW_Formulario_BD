@@ -11,13 +11,16 @@
 
         //Método construtor criado para a conexão
         public function __construct() {
-            $this->conexao = new mysqli($this->host, $this->usuario, $this->senha, $this->banco);
+            
             // this = este
             //this -> = este aqui
             // Cria uma nova conexão (instância) com a classe mysqli e incluindo as variáveis
+            $this->conexao = new mysqli($this->host, $this->usuario, $this->senha, $this->banco);
+         
             
             //Condição para caso o PHP esteja errado, exiba uma conexão;
             if ($this->conexao->connect_error) {
+                // Mensagem de erro
                 die("Falha na conexão: " . $this->conexao->connect_error);
             }
         }
