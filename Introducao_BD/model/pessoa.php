@@ -21,9 +21,9 @@ class Pessoa{
         return $this->id;
     }
     public function setId($id){
-        // Método para definir o valor da propriedade 'id' (Set
+        // Método para definir o valor da propriedade 'id' (Set = "soltar")
+        // Atribuição dos valores à variável privada
         $this->id = $id;
-
     }
     public function getNome(){
         return $this->nome;
@@ -74,8 +74,10 @@ class Pessoa{
         $this->celular = $celular;
     }
     
-    //Nova conexão estabelecida 
+    
+    // Construtor para inicializar a conexão com o banco de dados
     public function __construct(){
+        //Nova conexão estabelecida 
         $this->conexao = new Conexao();
     }
 
