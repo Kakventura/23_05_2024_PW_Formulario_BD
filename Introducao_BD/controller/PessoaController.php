@@ -2,7 +2,9 @@
 
     //Procurar acesso de um arquivo em outras pastas
     // Espécie de "import"
-    require_once '../model/pessoa.php';
+    // CÓDIGO INULTILIZÁVEL require_once '../model/pessoa.php'; -> endereçamento manual do arquivo
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/Introducao_BD/model/pessoa.php'; // Captura do endereço primário do servidor, independente do SO que está se utilizando.
+
 
     //Definição da classe que controla o recebimento de dados 
     class PessoaController{
