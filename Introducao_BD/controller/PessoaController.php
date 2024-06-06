@@ -6,18 +6,20 @@
 
     //Definição da classe que controla o recebimento de dados 
     class PessoaController{
+        // Declaração da variável privada 
         private $pessoa;
         
+        // Método construtor da classe
         public function __construct(){
 
-            //Instanciamento da classe "pessoa" e atribuição na variável
+            //Instanciamento da classe "pessoa" e atribuição na variável privada criada.
             $this->pessoa = new Pessoa();
 
             //Execução da inserção de dados
             $this->inserir();
         }
 
-        // Definição dos valores 
+        // Recebimento valores das propriedades estabelecidas na classe Pessoa através do HTML
         public function inserir(){
             $this->pessoa->setNome($_POST['nome']);
             $this->pessoa->setEndereco($_POST['endereco']);
@@ -27,7 +29,8 @@
             $this->pessoa->setEstado($_POST['estado']);
             $this->pessoa->setTelefone($_POST['telefone']);
             $this->pessoa->setCelular($_POST['celular']);
-            
+
+            // Chama as ações do método inserir dentro da instância da classe Pessoa.
             $this->pessoa->inserir();
 
         }
