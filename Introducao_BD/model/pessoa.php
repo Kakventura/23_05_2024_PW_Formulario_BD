@@ -3,8 +3,8 @@
 require_once '../controller/conexao.php';
 
 class Pessoa{
-    //Armazenamento de dados
-    private $id;
+    // Criação (réplicas) das variáveis para o recebimento de seus valores 
+    private $id; // variável de identificação 
     private $nome;
     private $endereco;
     private $bairro;
@@ -15,11 +15,13 @@ class Pessoa{
     private $celular;
     private $conexao; //Variável para armazenar a conexão com o banco de dados
 
-    //Recebimento de valores (Métodos Getters e Setters)
+    //Recebimento de valores das propriedades privadas (Métodos Getters e Setters)
     public function getId(){
+        // Método para obter o valor da propriedade 'id' (Get = conseguir)
         return $this->id;
     }
     public function setId($id){
+        // Método para definir o valor da propriedade 'id' (Set
         $this->id = $id;
 
     }
