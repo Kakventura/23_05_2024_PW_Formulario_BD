@@ -3,15 +3,18 @@
     // Criação de uma classe chamada Conexão
     class Conexao {
         //Variáveis que armazenam o endereço do servidor
-        private $host = "localhost";
-        private $usuario = "root";
-        private $senha = "";
-        private $banco = "cliente";
-        private $conexao; // criação da variável que se tornará o objeto da para fazer a conexão
+        private $host = "localhost"; // variável criada para armazenar o endereço do host de um banco de dados. 
+        private $usuario = "root"; // variável para supostamente armazenar o nome do usuário que vai acessar o banco de dados.
+        private $senha = ""; // variável para supostamente a senha do usuário que vai acessar o banco de dados.
+        private $banco = "cliente"; // variável que armazena o nome do banco.
+        private $conexao; // criação da variável que se tornará o objeto da para fazer a conexão.
 
         //Método construtor criado para a conexão
         public function __construct() {
             $this->conexao = new mysqli($this->host, $this->usuario, $this->senha, $this->banco);
+            // this = este
+            //this -> = este aqui
+            // Cria uma nova conexão (instância) com a classe mysqli e incluindo as variáveis
             
             //Condição para caso o PHP esteja errado, exiba uma conexão;
             if ($this->conexao->connect_error) {
