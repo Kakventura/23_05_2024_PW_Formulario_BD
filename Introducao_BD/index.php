@@ -9,7 +9,7 @@
     <div class="container">
         <h2>Cadastro</h2>
         <!-- Recebimento de valores e conexão com o PHP -->
-        <form method = "POST" action="controller/PessoaController.php">
+        <form method = "POST" action="controller/PessoaController.php?acao=inserir">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome:">
