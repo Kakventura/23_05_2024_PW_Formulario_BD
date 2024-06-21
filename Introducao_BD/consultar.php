@@ -1,3 +1,6 @@
+<?php
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/formulario_banco/controller/PessoaController.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +9,9 @@
 </head>
 <body>
     <div class="container">
+        <div>&nbsp;</div>
         <h2>Consulta</h2>
+        <div>&nbsp;</div>
         <table class="table">
             <thead>
                 <tr>
@@ -17,26 +22,19 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
-                // Simulação de registros
-                $registros = [
-                    ['João', '123456789', '987654321'],
-                    ['Maria', '987654321', '123456789'],
-                    ['Pedro', '555555555', '999999999']
-                ];
+            <?php
+                $pessoaController = new PessoaController();
+                $pessoas = $pessoaController->listar();
 
-                foreach ($registros as $registro) {
-                    echo '<tr>';
-                    echo '<td>' . $registro[0] . '</td>';
-                    echo '<td>' . $registro[1] . '</td>';
-                    echo '<td>' . $registro[2] . '</td>';
-                    echo '<td>';
-                    echo '<button class="btn btn-primary">Editar</button>';
-                    echo '<button class="btn btn-danger">Excluir</button>';
-                    echo '</td>';
-                    echo '</tr>';
-                }
-                ?>
+                foreach ($pessoas as $pessoa) {
+                    ?>
+                <tr>
+                    <th> <?php echo $pessoa['nome']; ?></th>
+                    <th> <?php echo $pessoa['telefone']; ?></th>
+                    <th> <?php echo $pessoa['celular']; ?></th>
+                    <th> <a href="editar.php?id= <?php echo $pessoa['id']; ?>">editar</a></th>
+                </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>
